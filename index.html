@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Exercícios em JavaScript</title>
+
+<style>
+    body {
+        font-family: Arial;
+        text-align: center;
+        background: #ffdbbb;
+    }
+
+    h1 {
+        margin-top: 20px;
+    }
+
+    button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+        background: #000080;
+        color: white;
+    }
+
+    button:hover {
+        background: #ffffff;
+    }
+
+    #saida {
+        margin-top: 20px;
+        padding: 15px;
+        background: rgb(255, 255, 255);
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        min-height: 100px;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Lista de Exercícios</h1>
+
+<button onclick="ex1()">Exercício 1</button>
+<button onclick="ex2()">Exercício 2</button>
+<button onclick="ex3()">Exercício 3</button>
+<button onclick="ex5()">Exercício 4</button>
+
+<div id="saida"></div>
+
+<script>function mostrar(texto) {
+    document.getElementById("saida").innerHTML = texto;
+}
+
+// =============================
+// EXERCÍCIO 1
+// =============================
+function ex1() {
+    let resultado = "Múltiplos de 3:<br>";
+    for (let i = 3; i <= 30; i += 3) {
+        resultado += i + "<br>";
+    }
+    mostrar(resultado);
+}
+
+// =============================
+// EXERCÍCIO 2
+// =============================
+function ex2() {
+    let resultado = "Números pares:<br>";
+    for (let i = 2; i <= 20; i += 2) {
+        resultado += i + "<br>";
+    }
+    mostrar(resultado);
+}
+
+// =============================
+// EXERCÍCIO 3
+// =============================
+function ex3() {
+    let n = Number(prompt("Digite um número:"));
+    let fat = 1;
+
+    for (let i = 1; i <= n; i++) {
+        fat *= i;
+    }
+
+    mostrar("Fatorial de " + n + " = " + fat);
+}
+
+// =============================
+// EXERCÍCIO 5
+// =============================
+function ex5() {
+    let contD = 0;
+    let contAB = 0;
+    let contE = 0;
+
+    for (let i = 1; i <= 10; i++) {
+        let nota = Number(prompt("Nota:"));
+
+        if (nota >= 7) {
+            contAB++;
+        } else if (nota >= 3) {
+            contD++;
+        } else {
+            contE++;
+        }
+    }
+
+    let percE = (contE / 10) * 100;
+
+    mostrar(
+        "D: " + contD + "<br>" +
+        "A/B: " + contAB + "<br>" +
+        "E: " + percE.toFixed(2) + "%"
+    );
+}
+
+</script>
+
+</body>
+</html>
